@@ -1,0 +1,156 @@
+:root{
+    --crna: #202e3b;
+    --blue: #2b7db8;
+    --text-shadow: 0.1rem 0.1rem 0.3rem #333;
+    --box-shadow: 0.1rem 0.1rem 0.3rem #333;
+}
+
+*{
+    font-family: "Poppins", "sans-sarif";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all .3s linear;
+    /* color: blanchedalmond; */
+}
+
+/* Kako bih lakše računali REM veličinu, postavimo font size 62.5%.
+Sada je 1REM =10px */
+html{
+    font-size: 62.5%
+}
+
+body{
+    background-color: var(--crna);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em 1em 2em;
+    color: black;
+    background-color: rgba(40, 51, 82, 0.8);
+    position: fixed;
+    width: 100%;
+    top:0;
+}
+
+header > a > i{
+    font-size: 4.7em;
+    color: #eee;
+}
+
+header > nav > div > a{
+    padding: 0em 1em 0em 1em;
+    text-decoration: none;
+    font-size: 2rem;
+    color:#eee;
+    text-shadow: var(--text-shadow);
+}
+
+header > nav > div > a:hover{
+    color: var(--blue);
+}
+
+.fa-bars{
+    color: #fff;
+    font-size: 2.8rem;
+    cursor: pointer;
+
+    display: none;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* flex-direction: column; */
+}
+
+section{
+    text-align: center;
+    text-shadow: var(--text-shadow);
+}
+
+h1{
+    font-size: 9rem;
+    color: var(--blue);
+}
+
+h2{
+    font-size: 7rem;
+    color: #fff;
+}
+
+.btn{
+    outline: 0;
+    border: 0;
+    background-color: var(--blue);
+    font-size: 1.6rem;
+    width: 17rem;
+    height: 4rem;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.btn:hover{
+    background-color: var(--crna);
+    letter-spacing: 0.1rem;
+}
+
+.icons {
+    margin: 2rem;
+}
+
+.icons a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    background-color: #fff;
+    color: var(--blue);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    line-height: 4rem;  /* visina retka teksta */
+    /* text-shadow: var(--text-shadow); */
+    box-shadow: var(--box-shadow);
+}
+
+.video-container{
+    position: absolute; /* ipak je pozadinski element */
+    z-index: -1;
+    object-fit: cover;
+}
+
+.video-container video{
+    /* width: 100%;
+    height: 100%;  */
+    object-fit: cover;  
+}
+
+@media (max-width: 600px) {
+    html{
+        font-size: 50%; /* radi rem-a */
+    }
+    .fa-bars{
+        display: block;
+    }
+    nav{
+        position: fixed;
+        top:0;
+        left: -120%;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 2;
+    }
+    .navigation{
+        display: none;
+    }
+}
