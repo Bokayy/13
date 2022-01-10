@@ -34,6 +34,7 @@ header{
     position: fixed;
     width: 100%;
     top:0;
+    z-index: 1;
 }
 
 header > a > i{
@@ -134,12 +135,17 @@ h2{
     object-fit: cover;  
 }
 
+.fa-bars{
+    display: none;
+}
+
 @media (max-width: 600px) {
     html{
         font-size: 50%; /* radi rem-a */
     }
     .fa-bars{
         display: block;
+        z-index: 2;
     }
     nav{
         position: fixed;
@@ -151,6 +157,20 @@ h2{
         z-index: 2;
     }
     .navigation{
+        flex-flow: column;
+        justify-content: center;
+        height: 100%;
+        background-color: var(--crna);
+        width: 30rem;
+    }
+    nav >.navigation > a {
+        font-size:3rem;
+        text-transform: uppercase;
+    }
+    /* .navigation{
         display: none;
+    } */
+    .nav-toggle{
+        left:0;
     }
 }
